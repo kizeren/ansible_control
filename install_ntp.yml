@@ -1,0 +1,20 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+  - name: install ntp package
+    apt: 
+      name: ntp
+
+  - name: install ntpdate package
+    apt:
+      name: ntpdate
+
+  - name: install ntpstat package
+    apt:
+      name: ntpstat
