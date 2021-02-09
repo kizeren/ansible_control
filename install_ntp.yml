@@ -6,15 +6,19 @@
   - name: update repository index
     apt:
       update_cache: yes
+    when: ansible_distribution == ["Debian", "Ubuntu"]
 
   - name: install ntp package
     apt: 
       name: ntp
+    when: ansible_distribution == ["Debian", "Ubuntu"]
 
   - name: install ntpdate package
     apt:
       name: ntpdate
+    when: ansible_distribution == ["Debian", "Ubuntu"]
 
   - name: install ntpstat package
     apt:
       name: ntpstat
+    when: ansible_distribution == ["Debian", "Ubuntu"]
