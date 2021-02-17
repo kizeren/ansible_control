@@ -1,0 +1,62 @@
+---
+
+- hosts: boinc,web_servers,test_servers
+  become: true
+  pre_tasks:
+
+  - name: install updates(all)
+    tags: always
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: install updates (Ubuntu, Debian)
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == ["Ubuntu", "Debian"]
+
+  - name: create ansible user
+    tags: always
+    user:
+      name: ansible
+      groups: root
+
+  - name: add sudoers file for ansible
+    tags: always
+    copy:
+      src: sudoer_ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
+
+- hosts: laptop
+  connection: local
+  become: true
+  pre_tasks:
+
+  - name: Localhost update
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == ["Ubuntu", "Debian"]
+
+  - name: create ansible user
+    tags: always
+    user:
+      name: ansible
+      groups: root
+
+  - name: add sudoers file for ansible
+    tags: always
+    copy:
+      src: sudoer_ansible
+      dest: /etc/sudoers.d/ansible
+      owner: root
+      group: root
+      mode: 0440
+

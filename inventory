@@ -10,5 +10,5 @@ LBRYNET.local
 [boinc]
 192.168.0.138
 
-[laptops]
-192.168.0.118
+[laptop]
+localhost
