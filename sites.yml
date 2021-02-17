@@ -18,4 +18,12 @@
       update_cache: yes
     when: ansible_distribution == ["Ubuntu", "Debian"]
 
+  - name: copy file test
+    tags: always
+    copy:
+      src: default_site.yml
+      dest: /root/index.html
+      owner: root
+      group: root
+      mode: 0644
 
