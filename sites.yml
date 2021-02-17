@@ -3,11 +3,15 @@
 - hosts: all
   become: true
   tasks:
+  - name: install updates(all)
+    package:
+      upgrade: dist
+      update_cache: yes
+
   - name: install ntp ntpdate ntpstat package
     package: 
       name: 
         - "ntp"
         - "ntpdate"
         - "ntpstat"
-      update_cache: yes
 
