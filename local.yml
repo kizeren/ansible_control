@@ -4,16 +4,11 @@
   become: true
 
   pre_tasks:
-  - name: Update apt repo and cache on all ubuntu and debian distros
+  - name: Update Repositories
     tags: always
     apt:
-      upgrade: dist
       update_cache: yes
-
-  - name: Update all packages
-    tags: always
-    apt:
-      upgrade: dist
+    changed_when: False
 
   tasks:
     - include: tasks/users.yml
