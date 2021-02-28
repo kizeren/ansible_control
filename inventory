@@ -2,14 +2,15 @@
 192.168.0.2 
 
 [test_servers]
-192.168.0.31  
-192.168.0.35 
-192.168.0.244 
-LBRYNET.local 
+basementdesk.local.lan
+satnogs.local.lan
+syncthingbackup.local.lan
+LBRYNET.local.lan
+mercury.local.lan
+venus.local.lan
 
 [boinc]
-192.168.0.149 
-192.168.0.122
+orangepizero1.local.lan
 
 [laptop]
 localhost
