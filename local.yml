@@ -1,4 +1,20 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
+  become: true
+
+  pre_tasks:
+  - name: Update apt repo and cache on all ubuntu and debian distros
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+
+  - name: Update all packages
+    tags: always
+    apt:
+      upgrade: dist
+
   tasks:
-  - name: Update All
+    - include: tasks/users.yml
+    - include: tasks/cron.yml
