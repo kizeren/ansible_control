@@ -4,4 +4,11 @@
       state: present     
       name:     
        - ansible
+       - git
+       - screen
+       - wget
+       - htop
+       - unzip
+       - python3
+       - python3-pip
       update_cache: true
