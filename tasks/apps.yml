@@ -1,0 +1,7 @@
+  - name: Install default apps
+    become: true
+    apt:
+      state: present     
+      name:     
+       - ansible
+      update_cache: true
