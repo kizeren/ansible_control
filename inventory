@@ -4,13 +4,17 @@
 [test_servers]
 basementdesk.local.lan
 satnogs.local.lan
-syncthingbackup.local.lan
 LBRYNET.local.lan
 mercury.local.lan
 venus.local.lan
 
 [boinc]
-orangepizero1.local.lan
+orangepizero.local.lan
 
 [laptop]
 localhost
+
+
+[defunc]
+#syncthingbackup.local.lan
+

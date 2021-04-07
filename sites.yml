@@ -4,25 +4,11 @@
   become: true
   pre_tasks:
 
-  - name: install updates(all)
-    tags: always
-    dnf:
-      update_cache: yes
-    changed_when: false
-    when: ansible_distribution == "CentOS"
-
   - name: install updates (Ubuntu, Debian)
     tags: always
     apt:
       update_cache: yes
-    changed_when: false
-    when: ansible_distribution == ["Ubuntu", "Debian"]
-
-  - name: Add key for ansible
-    tags: always
-    authorized_key:
-      user: ansible
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGcOvIwsLrph2bDBuiQ139gLZw/qOvnmEHcPEpEjWRwz Ansible Only"
+      upgrade: dist
 
 - hosts: laptop
   connection: local
@@ -33,12 +19,4 @@
     tags: always
     apt:
       update_cache: yes
-    changed_when: false
-    when: ansible_distribution == ["Ubuntu", "Debian"]
-
-  - name: Add key for ansible
-    tags: always
-    authorized_key:
-      user: ansible
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGcOvIwsLrph2bDBuiQ139gLZw/qOvnmEHcPEpEjWRwz Ansible Only"
-  
+      upgrade: dist

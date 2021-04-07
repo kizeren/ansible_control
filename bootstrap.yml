@@ -4,15 +4,27 @@
   become: true
   pre_tasks:
 
-  - name: Update all repositories
+  - name: Update all repositories APT based systems
     tags: always
     apt:
       update_cache: yes
     when: ansible_distribution in ["Ubuntu", "Debian"]
 
-  - name: install updates (Ubuntu, Debian)
+  - name: Update all repositories PACMAN based systems
+    tags: always
+    pacman:
+      update_cache: yes
+    when: ansible_distribution in ["Archlinux"]
+
+  - name: install updates APT based systems
     tags: always
     apt:
       upgrade: dist
     when: ansible_distribution in ["Ubuntu", "Debian"]
+
+  - name: install updates PACMAN based systems
+    tags: always
+    pacman:
+      upgrade: yes
+    when: ansible_distribution in ["Archlinux"]
 
