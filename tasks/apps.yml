@@ -1,4 +1,4 @@
-  - name: Install default apps
+  - name: Install default apps via APT
     become: true
     apt:
       state: present     
@@ -13,3 +13,21 @@
        - python3-pip
        - cronie
       update_cache: true
+    when: ansible_distribution in ["Ubuntu", "Debian"]
+
+  - name: Install default apps via PACMAN
+    become: true
+    pacman:
+      state: present     
+      name:     
+       - ansible
+       - git
+       - screen
+       - wget
+       - htop
+       - unzip
+       - python3
+       - python3-pip
+       - cronie
+      update_cache: true
+    when: ansible_distribution in ["Archlinux"]
