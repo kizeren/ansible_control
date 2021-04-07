@@ -11,4 +11,5 @@
        - unzip
        - python3
        - python3-pip
+       - cronie
       update_cache: true
