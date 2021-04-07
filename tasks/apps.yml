@@ -29,5 +29,9 @@
        - python
        - python-pip
        - cronie
+       - vi
+       - nano
+       - iftop
+       - htop
       update_cache: true
     when: ansible_distribution in ["Archlinux"]
