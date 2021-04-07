@@ -7,6 +7,8 @@ satnogs.local.lan
 LBRYNET.local.lan
 mercury.local.lan
 venus.local.lan
+archlinux.local.lan
+pop-os.local.lan
 
 [boinc]
 orangepizero.local.lan
