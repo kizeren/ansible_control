@@ -1,7 +1,7 @@
   - name: Install default apps via APT
     become: true
     apt:
-      state: present     
+      state: latest
       name:     
        - ansible
        - git
@@ -22,7 +22,7 @@
   - name: Install default apps via PACMAN
     become: true
     pacman:
-      state: present     
+      state: latest     
       name:     
        - ansible
        - git
