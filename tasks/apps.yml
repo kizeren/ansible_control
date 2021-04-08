@@ -39,5 +39,13 @@
        - cmatrix
        - mc
        - tmux
+       - openssh
       update_cache: true
     when: ansible_distribution in ["Archlinux"]
+  
+  - name: Enable SSHD on ArchLinux
+    command: systemctl enable sshd
+    tags: 
+      - sshd
+    when: ansible_distribution in ["Archlinux"]
+      
