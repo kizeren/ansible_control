@@ -13,7 +13,6 @@
        - python3-pip
        - cmatrix
        - nano
-       - vi
        - mc
        - tmux
       update_cache: true
