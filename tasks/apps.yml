@@ -44,7 +44,7 @@
     when: ansible_distribution in ["Archlinux"]
   
   - name: Enable SSHD on ArchLinux
-    command: systemctl enable sshd
+    command: systemctl enable sshd && systemctl start sshd
     tags: 
       - sshd
     when: ansible_distribution in ["Archlinux"]
