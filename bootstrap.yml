@@ -8,7 +8,7 @@
     tags: always
     apt:
       update_cache: yes
-    when: ansible_distribution in ["Ubuntu", "Debian"]
+    when: ansible_distribution in ["Ubuntu", "Debian", "Pop!_OS"]
 
   - name: Update all repositories PACMAN based systems
     tags: always
@@ -20,7 +20,7 @@
     tags: always
     apt:
       upgrade: dist
-    when: ansible_distribution in ["Ubuntu", "Debian"]
+    when: ansible_distribution in ["Ubuntu", "Debian", "Pop!_OS"]
 
   - name: install updates PACMAN based systems
     tags: always

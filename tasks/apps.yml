@@ -16,7 +16,7 @@
        - mc
        - tmux
       update_cache: true
-    when: ansible_distribution in ["Ubuntu", "Debian"]
+    when: ansible_distribution in ["Ubuntu", "Debian", "Pop!_OS"]
 
   - name: Install default apps via PACMAN
     become: true
