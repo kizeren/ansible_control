@@ -15,6 +15,7 @@
        - nano
        - mc
        - tmux
+       - neofetch
       update_cache: true
     when: ansible_distribution in ["Ubuntu", "Debian", "Pop!_OS"]
 
@@ -40,6 +41,7 @@
        - mc
        - tmux
        - openssh
+       - neofetch
       update_cache: true
     when: ansible_distribution in ["Archlinux"]
   
